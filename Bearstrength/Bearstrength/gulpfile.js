@@ -17,21 +17,22 @@ gulp.task("minify", function () {
     return merge(streams);
 });
 
-// Dependency Dirs
-var deps = {
-    "bootstrap": {
-        "dist/**/*": ""
-    },
-    "jquery": {
-        "dist/*": ""
-    }
-};
-
 gulp.task("clean", function (cb) {
     return rimraf("wwwroot/vendor/", cb);
 });
 
 gulp.task("scripts", function () {
+
+    // Dependency Dirs
+    var deps = {
+        "bootstrap": {
+            "dist/css/bootstrap.min.css": "",
+            "dist/js/bootstrap.min.js": ""
+        },
+        "jquery": {
+            "dist/jquery.min.js": ""
+        }
+    };
 
     var streams = [];
 
