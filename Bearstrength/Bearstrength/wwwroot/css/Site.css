@@ -1,33 +1,31 @@
-﻿/* http://paletton.com/#uid=51d0O0kiSuS8YO-eiDxmNrdqCmE */
-$primary-color: #F6D365;
-$secondary-color: #E3F163;
-$tertiary-color: #F6A165;
-$body-font-color: #1f1f1f;
-
-@import url(https://fonts.googleapis.com/css?family=Bangers|Oswald|Roboto);
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Oswald', sans-serif;
-$brand-font: 'Bangers', cursive, serif;
+﻿/*
+    Colors
     
+    primary orange:     #F6D365
+    secondary yellow:   #E3F163
+    tertiary red:       #F6A165
+    http://paletton.com/#uid=51d0O0kiSuS8YO-eiDxmNrdqCmE
+
+*/
+
 body {
-    font-family: $primary-font;
-    color: $body-font-color;
+    font-family: 'Roboto', sans-serif;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
+   position:absolute;
+   bottom:0;
+   height:50px;   
 }
 
 h1, h2 {
-    font-family: $secondary-font;
-    color: $primary-color;
+    font-family: 'Oswald', sans-serif;
+    color: #F6D365;
 }
 
 h3, h4, h5, h6 {
-    font-family: $primary-font;
-    color: $secondary-color;
+    font-family: 'Roboto', sans-serif;
+    color: #E3F163;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -43,9 +41,16 @@ h3, h4, h5, h6 {
     white-space: normal;
 }
 
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+*/
 
 .validation-summary-valid {
-    display: none;
+    display:none;
 }
 
 .validation-summary-errors {
@@ -60,77 +65,68 @@ h3, h4, h5, h6 {
 }
 
 .field-validation-error {
-    color: $secondary-color;
+    color: #E3F163;
 }
 
 /*Log in/Register pages*/
 .form-login {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
 }
-
 .form-login .form-login-heading,
 .form-login .checkbox {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-
 .form-login .checkbox {
-    font-weight: normal;
+  font-weight: normal;
 }
-
 .form-login .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
 }
-
 .form-login .form-control:focus {
-    z-index: 2;
+  z-index: 2;
 }
-
 .form-login input[type="username"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
-
 .form-login input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .form-login input[type="username-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
-
 .form-login input[type="email-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-
 .form-login input[type="password-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-
 .form-login input[type="confirm-register"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .form-login-max-width {
@@ -139,16 +135,16 @@ h3, h4, h5, h6 {
 
 /* Sets/Reps */
 .sets-input {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    max-width: 125px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  max-width: 125px;
 }
 
 .reps-input {
-    margin-left: -1px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    max-width: 125px;
+  margin-left: -1px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  max-width: 125px;
 }
 
 .numeric-input {
@@ -179,12 +175,12 @@ h3, h4, h5, h6 {
 
 /* Override Bootstrap CSS */
 .navbar-inverse {
-    background: linear-gradient(120deg, $tertiary-color 0%, $primary-color);
+    background: linear-gradient(120deg, #f6a165 0%, #f6d365);
     border-style: none;
 }
 
 .navbar-inverse .navbar-brand {
-    font-family: $brand-font;
+    font-family: 'Bangers', cursive, serif;
     font-size: 36px;
 }
 
@@ -193,31 +189,31 @@ h3, h4, h5, h6 {
 }
 
 .navbar-inverse .navbar-brand .strength {
-    color: $secondary-color;
+    color: #E3F163;
     margin-left: -4px;
 }
 
 .navbar-inverse .navbar-brand .bear:hover, .navbar-inverse .navbar-brand .strength:hover {
-    text-decoration: none;
+    text-decoration:none;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    display: block;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    border-bottom: 3px solid transparent;
-    font-family: $secondary-font;
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  border-bottom: 3px solid transparent;
+  font-family: 'Oswald', sans-serif;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    border-bottom: 3px solid $secondary-color;
+    border-bottom: 3px solid #E3F163;
 }
 
 .navbar-inverse .navbar-nav > li:active > a {
-    border-bottom: 3px solid $secondary-color;
+    border-bottom: 3px solid #E3F163;
 }
 
 .navbar-toggle {
@@ -235,13 +231,13 @@ h3, h4, h5, h6 {
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    color: $secondary-color;
+    color: #E3F163;
     background-color: #FFFFFF;
 }
 
 .dropdown-menu > li > a {
-    font-family: $secondary-font;
-    color: $secondary-color;
+    font-family: 'Oswald', sans-serif;
+    color: #E3F163;
 }
 
 .dropdown-menu {
@@ -249,15 +245,15 @@ h3, h4, h5, h6 {
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    color: $secondary-color;
+    color: #E3F163;
     text-decoration: underline;
     background-color: #FFFFFF;
 }
 
 .btn-primary {
     color: #ffffff;
-    background-color: $primary-color;
-    border-color: $primary-color;
+    background-color: #F6D365;
+    border-color: #F6D365;
 }
 
 .btn-primary:hover, .btn-primary:focus {

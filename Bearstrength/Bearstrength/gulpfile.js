@@ -1,39 +1,50 @@
-/// <binding AfterBuild='clean, minify, bootstrap, jquery' />
+﻿/// <binding AfterBuild='clean, minify, scripts' />
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var clean = require('gulp-clean');
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var rimraf = require("rimraf");
+var merge = require('merge-stream');
 
-gulp.task("clean", function () {
-    return gulp.src('wwwroot/js', { read: false })
-        .pipe(clean());
-});
+gulp.task("minify", function () {
 
-gulp.task("bootstrap", function () {
-    var streams = [];
-
-    streams.push(
-        gulp.src("node_modules/bootstrap/dist/js/bootstrap.min.js")
-            .pipe(gulp.dest("wwwroot/js"))
-    );
-
-    streams.push(
-        gulp.src("node_modules/bootstrap/dist/css/bootstrap.min.css")
-            .pipe(gulp.dest("wwwroot/css"))
-    );
+    var streams = [
+        gulp.src(["wwwroot/js/*.js"])
+            .pipe(uglify())
+            .pipe(concat("site.min.js"))
+            .pipe(gulp.dest("wwwroot/lib/site"))
+    ];
 
     return merge(streams);
 });
 
+// Dependency Dirs
+var deps = {
+    "bootstrap": {
+        "dist/**/*": ""
+    },
+    "jquery": {
+        "dist/*": ""
+    }
+};
 
-gulp.task("jquery", function () {
-    return gulp.src("node_modules/jquery/dist/jquery.min.js")
-        .pipe(gulp.dest("wwwroot/js"));
+gulp.task("clean", function (cb) {
+    return rimraf("wwwroot/vendor/", cb);
 });
 
-gulp.task("sass", function () {
-    return gulp.src('Styles/Site.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('wwwroot/css'));
+gulp.task("scripts", function () {
+
+    var streams = [];
+
+    for (var prop in deps) {
+        console.log("Prepping Scripts for: " + prop);
+        for (var itemProp in deps[prop]) {
+            streams.push(gulp.src("node_modules/" + prop + "/" + itemProp)
+                .pipe(gulp.dest("wwwroot/vendor/" + prop + "/" + deps[prop][itemProp])));
+        }
+    }
+
+    return merge(streams);
+
 });
 
-gulp.task("default", gulp.series('clean', 'bootstrap', 'jquery', 'sass'))
+
