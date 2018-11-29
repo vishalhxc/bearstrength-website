@@ -1,48 +1,89 @@
-﻿/* http://paletton.com/#uid=51d0O0kiSuS8YO-eiDxmNrdqCmE */
-$primary-color: #F6D365;
-$secondary-color: #E3F163;
-$tertiary-color: #F6A165;
-$body-font-color: #1f1f1f;
+﻿/*
+    Colors
+    
+    primary orange:     #F6D365
+    secondary yellow:   #E3F163
+    tertiary red:       #F6A165
+    http://paletton.com/#uid=51d0O0kiSuS8YO-eiDxmNrdqCmE
 
-@import url(https://fonts.googleapis.com/css?family=Bangers|Oswald|Roboto);
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Oswald', sans-serif;
-$brand-font: 'Bangers', cursive, serif;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Nixie+One|Open+Sans|Raleway');
 
 body {
-    font-family: $primary-font;
-    color: $body-font-color;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1f1f1f !important;
+    color: #FFFFFF !important;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
+/* Override Bootstrap Navbar */
+.navbar {
+    background: linear-gradient(120deg, #f6a165 0%, #f6d365);
 }
 
-h1, h2 {
-    font-family: $secondary-font;
-    color: $primary-color;
+.navbar .navbar-brand {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 36px;
+    color: #1f1f1f;
+}
+
+.navbar .navbar-brand:hover {
+    text-decoration: none;
+}
+
+.navbar-nav > .nav-item {
+    color: #1F1F1F !important;
+    text-decoration: none;
+    font-size: 24px;
+    border-bottom: 3px solid transparent;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar-nav .nav-link {
+    color: #1F1F1F !important;
+}
+/* Override Bootstrap Jumbotron */
+.home-background {
+    background-image: url("../images/main-bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 400px;
+    padding-top: 4vw;
+}
+
+.highlighter {
+    background: linear-gradient(120deg, #f6a165 0%, #f6d365);
+}
+
+.display-1 {
+    font-family: 'Alfa Slab One', cursive !important;
+    color: #FFFFFF !important;
+}
+
+.display-4 {
+    font-family: 'Nixie One', cursive !important;
+}
+
+h1 {
+    font-family: 'Nixie One', cursive !important;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif !important;
 }
 
 h3, h4, h5, h6 {
-    font-family: $primary-font;
-    color: $secondary-color;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
-    white-space: normal;
-}
-
 
 .validation-summary-valid {
     display: none;
@@ -59,8 +100,8 @@ h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
-.field-validation-error {
-    color: $secondary-color;
+span.field-validation-error {
+    color: #E3F163;
 }
 
 /*Log in/Register pages*/
@@ -177,91 +218,49 @@ h3, h4, h5, h6 {
     max-width: 100px;
 }
 
-/* Override Bootstrap CSS */
-.navbar-inverse {
-    background: linear-gradient(120deg, $tertiary-color 0%, $primary-color);
-    border-style: none;
-}
-
-.navbar-inverse .navbar-brand {
-    font-family: $brand-font;
-    font-size: 36px;
-}
-
-.navbar-inverse .navbar-brand .bear {
-    color: #FFFFFF;
-}
-
-.navbar-inverse .navbar-brand .strength {
-    color: $secondary-color;
-    margin-left: -4px;
-}
-
-.navbar-inverse .navbar-brand .bear:hover, .navbar-inverse .navbar-brand .strength:hover {
-    text-decoration: none;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    display: block;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    border-bottom: 3px solid transparent;
-    font-family: $secondary-font;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    border-bottom: 3px solid $secondary-color;
-}
-
-.navbar-inverse .navbar-nav > li:active > a {
-    border-bottom: 3px solid $secondary-color;
-}
-
-.navbar-toggle {
-    border: 0 none;
-}
-
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: transparent;
-}
-
-.navbar-nav > li > .dropdown-menu {
-    background-color: #FFFFFF;
-    border-top: 0;
-    text-align: right;
-}
-
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    color: $secondary-color;
-    background-color: #FFFFFF;
+.transparent {
+    display: none !important;
 }
 
 .dropdown-menu > li > a {
-    font-family: $secondary-font;
-    color: $secondary-color;
+    font-family: 'Raleway', sans-serif;
+    color: #E3F163;
 }
 
 .dropdown-menu {
-    border-radius: 0;
+    border-radius: 0px;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    color: $secondary-color;
+    color: #E3F163;
     text-decoration: underline;
     background-color: #FFFFFF;
 }
 
 .btn-primary {
     color: #ffffff;
-    background-color: $primary-color;
-    border-color: $primary-color;
+    background-color: #F6D365;
+    border-color: #F6D365;
 }
 
 .btn-primary:hover, .btn-primary:focus {
     color: #ffffff;
     background-color: #a57339;
     border-color: #a57339;
+}
+
+@media only screen and (max-width: 780px) {
+
+    .display-1 {
+        font-size: 2.8em !important;
+    }
+
+    .display-4 {
+        font-size: 1.6em !important;
+    }
+
+    .home-background {
+        height: 150px;
+        padding-top: 4vw;
+    }
 }

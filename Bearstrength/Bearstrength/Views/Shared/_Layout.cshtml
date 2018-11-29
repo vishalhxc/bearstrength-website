@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bearstrength</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav role="navigation" class="navbar navbar-expand-sm">
+            <div class="container">
+                <a asp-action="Index" asp-controller="Home" class="navbar-brand">Bearstrength</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a asp-action="Contact" asp-controller="Home" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+        <div class="container">&copy; @DateTime.Now.Year - Bearstrength</div>
+    </footer>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
