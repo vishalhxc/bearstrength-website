@@ -17,14 +17,26 @@ body {
     color: #FFFFFF !important;
 }
 
-/* Override Bootstrap Navbar */
+.dark-bear-logo {
+    width: 50px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+.light-bear-logo {
+    width: 100px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+/* Style Bootstrap Navbar */
 .navbar {
     background: linear-gradient(120deg, #f6a165 0%, #f6d365);
 }
 
 .navbar .navbar-brand {
     font-family: 'Alfa Slab One', cursive;
-    font-size: 36px;
+    font-size: 28pt;
     color: #1f1f1f;
 }
 
@@ -32,24 +44,76 @@ body {
     text-decoration: none;
 }
 
-.navbar-nav > .nav-item {
-    color: #1F1F1F !important;
-    text-decoration: none;
-    font-size: 24px;
-    border-bottom: 3px solid transparent;
+ .nav-link {
+    color: #1F1F1F;
+    font-size: 14pt;
     font-family: 'Raleway', sans-serif;
 }
 
-.navbar-nav .nav-link {
-    color: #1F1F1F !important;
-}
-/* Override Bootstrap Jumbotron */
-.home-background {
-    background-image: url("../images/main-bg.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
+ .nav-link:hover {
+     color: #FFFFFF;
+     text-decoration: underline;
+ }
+
+#home-background {
     height: 400px;
     padding-top: 4vw;
+}
+
+.home-background-image-0 {
+    background-image: url("../images/backgrounds/barbell.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s linear;
+}
+
+.home-background-image-1 {
+    background-image: url("../images/backgrounds/bike.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-2 {
+    background-image: url("../images/backgrounds/basketball.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-3 {
+    background-image: url("../images/backgrounds/jumprope.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-4 {
+    background-image: url("../images/backgrounds/kettlebell.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-5 {
+    background-image: url("../images/backgrounds/main-bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-6 {
+    background-image: url("../images/backgrounds/pool.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+}
+
+.home-background-image-7 {
+    background-image: url("../images/backgrounds/tennis.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 2s;
 }
 
 .highlighter {
@@ -75,6 +139,10 @@ h2 {
 
 h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif !important;
+}
+
+.img-1 {
+    background-image: url("../images/i.jpg");
 }
 
 /* Set width on the form input elements since they're 100% wide by default 
@@ -127,7 +195,7 @@ span.field-validation-error {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px;
-    font-size: 16px;
+    font-size: 16pt;
 }
 
 .form-login .form-control:focus {
