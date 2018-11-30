@@ -24,8 +24,8 @@ namespace Bearstrength
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            app.UseAuthentication();
+            //app.UseHsts();
+            //app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

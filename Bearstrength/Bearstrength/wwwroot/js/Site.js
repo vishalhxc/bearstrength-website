@@ -1,11 +1,1 @@
-﻿var imageIndex = 1;
-var imageClassCount = 8;
-window.onload = setInterval(rotateHomeBackground, 7000);
-
-function rotateHomeBackground()
-{
-    var homeBackground = document.getElementById("home-background");
-    homeBackground.classList.remove('home-background-image-' + imageIndex);
-    imageIndex = (imageIndex + 1) % imageClassCount;
-    homeBackground.classList.add('home-background-image-' + imageIndex);
-}
+var imageIndex=1,imageClassCount=8;function rotateHomeBackground(){var e=document.getElementById("home-background");e.classList.remove("home-background-image-"+imageIndex),imageIndex=(imageIndex+1)%imageClassCount,e.classList.add("home-background-image-"+imageIndex)}window.onload=setInterval(rotateHomeBackground,7e3);
