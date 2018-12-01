@@ -1,20 +1,20 @@
-﻿/*
-    Colors
-    
-    primary orange:     #F6D365
-    secondary yellow:   #E3F163
-    tertiary red:       #F6A165
-    http://paletton.com/#uid=51d0O0kiSuS8YO-eiDxmNrdqCmE
-
-*/
+﻿$primary-color: #F6D365;
+$secondary-color: #F6A165;
+$body-color: #1F1F1F;
+$font-color: #FFFFFF;
+$bearstrength-gradient: linear-gradient(120deg, $secondary-color 0%, $primary-color);
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Nixie+One|Open+Sans|Raleway');
+$bearstrength-font-family: 'Alfa Slab One', cursive;
+$heading-font-family: 'Nixie One', cursive;
+$minor-heading-font-family: 'Raleway', sans-serif;
+$body-font-family: 'Open Sans', sans-serif;
 
 body {
     padding-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #1f1f1f !important;
-    color: #FFFFFF !important;
+    font-family: $body-font-family;
+    background-color: $body-color !important;
+    color: $font-color !important;
 }
 
 .dark-bear-logo {
@@ -31,30 +31,31 @@ body {
 
 /* Style Bootstrap Navbar */
 .navbar {
-    background: linear-gradient(120deg, #f6a165 0%, #f6d365);
+    background: $bearstrength-gradient;
 }
 
 .navbar .navbar-brand {
-    font-family: 'Alfa Slab One', cursive;
+    font-family: $bearstrength-font-family;
     font-size: 28pt;
-    color: #1f1f1f;
+    color: $body-color;
 }
 
 .navbar .navbar-brand:hover {
     text-decoration: none;
 }
 
- .nav-link {
-    color: #1F1F1F;
+.nav-link {
+    color: $body-color;
     font-size: 14pt;
-    font-family: 'Raleway', sans-serif;
+    font-family: $minor-heading-font-family;
 }
 
- .nav-link:hover {
-     color: #FFFFFF;
-     text-decoration: underline;
- }
+.nav-link:hover {
+    color: $font-color;
+    text-decoration: underline;
+}
 
+/* Home page full-size image scroll */
 #home-background {
     height: 400px;
     padding-top: 4vw;
@@ -117,28 +118,31 @@ body {
 }
 
 .highlighter {
-    background: linear-gradient(120deg, #f6a165 0%, #f6d365);
+    background: $bearstrength-gradient;
 }
 
 .display-1 {
-    font-family: 'Alfa Slab One', cursive !important;
-    color: #FFFFFF !important;
+    font-family: $bearstrength-font-family !important;
+    color: $font-color !important;
 }
 
 .display-4 {
-    font-family: 'Nixie One', cursive !important;
+    font-family: $heading-font-family !important;
 }
 
 h1 {
-    font-family: 'Nixie One', cursive !important;
+    font-family: $heading-font-family !important;
+    background: $bearstrength-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    font-family: 'Raleway', sans-serif !important;
+    font-family: $minor-heading-font-family !important;
 }
 
 h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: $body-font-family !important;
 }
 
 .img-1 {
@@ -162,159 +166,11 @@ textarea {
 }
 
 .padded-top {
-    display: block;
-    min-height: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-span.field-validation-error {
-    color: #E3F163;
-}
-
-/*Log in/Register pages*/
-.form-login {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-
-.form-login .form-login-heading,
-.form-login .checkbox {
-    margin-bottom: 10px;
-}
-
-.form-login .checkbox {
-    font-weight: normal;
-}
-
-.form-login .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16pt;
-}
-
-.form-login .form-control:focus {
-    z-index: 2;
-}
-
-.form-login input[type="username"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.form-login input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.form-login input[type="username-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.form-login input[type="email-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.form-login input[type="password-register"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.form-login input[type="confirm-register"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.form-login-max-width {
-    max-width: 500px;
-}
-
-/* Sets/Reps */
-.sets-input {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    max-width: 125px;
-}
-
-.reps-input {
-    margin-left: -1px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    max-width: 125px;
-}
-
-.numeric-input {
-    max-width: 250px;
-}
-
-.rest-hours-input {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    max-width: 100px;
-}
-
-.rest-minutes-input {
-    margin-left: -1px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    max-width: 100px;
-}
-
-.rest-seconds-input {
-    margin-left: -2px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    max-width: 100px;
+    padding-top: 25px;
 }
 
 .transparent {
     display: none !important;
-}
-
-.dropdown-menu > li > a {
-    font-family: 'Raleway', sans-serif;
-    color: #E3F163;
-}
-
-.dropdown-menu {
-    border-radius: 0px;
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    color: #E3F163;
-    text-decoration: underline;
-    background-color: #FFFFFF;
-}
-
-.btn-primary {
-    color: #ffffff;
-    background-color: #F6D365;
-    border-color: #F6D365;
-}
-
-.btn-primary:hover, .btn-primary:focus {
-    color: #ffffff;
-    background-color: #a57339;
-    border-color: #a57339;
 }
 
 @media only screen and (max-width: 780px) {

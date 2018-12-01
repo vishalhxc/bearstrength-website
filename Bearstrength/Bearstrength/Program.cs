@@ -20,6 +20,7 @@ namespace Bearstrength
 
         private static void SetupConfiguration(WebHostBuilderContext ctx, IConfigurationBuilder builder)
         {
+            //Clear unnecessary sources and load configuration file
             builder.Sources.Clear();
             builder.AddJsonFile("config.json", false, true)
                 .AddEnvironmentVariables();

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Bearstrength.Models.Activity>
+@{
+    ViewData["Title"] = "Activities";
+}
+
+<div class="container padded-top">
+    <h1>@ViewData["Title"]</h1>
+
+    @foreach (var a in Model)
+    {
+        <p><strong>@a.Name</strong>: @a.Category.Name</p>
+    }
+</div>

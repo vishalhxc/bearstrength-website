@@ -2,6 +2,10 @@
 
 namespace Bearstrength.Models
 {
+    /// <summary>
+    /// Activity class is one instance of an activity or exercise 
+    /// (e.g. bench press, squat, jog, basketball game, etc.)
+    /// </summary>
     public class Activity
     {
         [Key]

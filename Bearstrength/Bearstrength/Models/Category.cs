@@ -2,6 +2,9 @@
 
 namespace Bearstrength.Models
 {
+    /// <summary>
+    /// A descriptor type for Activity
+    /// </summary>
     public class Category
     {
         public byte Id { get; set; }

@@ -24,13 +24,19 @@
                     <ul class="navbar-nav mr-auto"></ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a asp-action="Contact" asp-controller="Home" class="nav-link">About</a>
+                            <a asp-action="Contact" asp-controller="Home" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="activityDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Activities
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="activityDropdown">
+                                <a asp-action="Index" asp-controller="Activity" class="dropdown-item">My activities</a>
+                                <a asp-action="Create" asp-controller="Activity" class="dropdown-item">Create an activity</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Home" class="nav-link">Workout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Home" class="nav-link">User</a>
+                            <a asp-action="Index" asp-controller="Home" class="nav-link">Username</a>
                         </li>
                     </ul>
                 </div>
@@ -38,12 +44,10 @@
         </nav>
     </header>
     <main>
-        <div class="container">
-            @RenderBody()
-        </div>
+        @RenderBody()
     </main>
     <footer>
-        <div class="container">&copy; @DateTime.Now.Year - Bearstrength</div>
+        <div class="container padded-top">&copy; @DateTime.Now.Year - Bearstrength</div>
     </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

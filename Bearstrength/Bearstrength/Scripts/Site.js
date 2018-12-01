@@ -1,8 +1,9 @@
 ﻿var imageIndex = 1;
 var imageClassCount = 8;
-window.onload = setInterval(rotateHomeBackground, 7000);
+window.onload = setInterval(scrollHomeBackground, 7000);
 
-function rotateHomeBackground()
+//Scrolls through the images on the home page.
+function scrollHomeBackground()
 {
     var homeBackground = document.getElementById("home-background");
     homeBackground.classList.remove('home-background-image-' + imageIndex);

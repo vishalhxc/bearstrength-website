@@ -44,4 +44,3 @@ gulp.task("minify-js", function () {
 });
 
 gulp.task("default", gulp.series('add-bootstrap', 'add-jquery', 'compile-minify-sass', 'minify-js'))
-gulp.task("")
