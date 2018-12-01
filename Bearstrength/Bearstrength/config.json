@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "BearstrengthConnectionString" : "server=(localdb)\\ProjectsV13;Database=BearstrengthDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  }
+}
