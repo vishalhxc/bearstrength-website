@@ -1,6 +1,8 @@
 ﻿using Bearstrength.Data;
+using Bearstrength.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,11 +22,26 @@ namespace Bearstrength
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            // Add context to query SQL database using connection string in config file.
             services.AddDbContext<BearstrengthDbContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("BearstrengthConnectionString"));
             });
+
+            // Add repository pattern service to make database calls.
             services.AddScoped<IBearstrengthRepository, BearstrengthRepository>();
+
+            services.AddIdentity<BearstrengthUser, IdentityRole>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredUniqueChars = 0;
+                config.Password.RequireDigit = false;
+                config.Password.RequireLowercase = false;
+                config.Password.RequireUppercase = false;
+                config.Password.RequireNonAlphanumeric = false;
+            })
+            .AddEntityFrameworkStores<BearstrengthDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +55,7 @@ namespace Bearstrength
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

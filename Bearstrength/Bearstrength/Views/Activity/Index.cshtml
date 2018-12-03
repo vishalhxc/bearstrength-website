@@ -6,6 +6,10 @@
 <div class="container padded-top">
     <h1>@ViewData["Title"]</h1>
 
+    <h2>
+        <a asp-action="Create" asp-controller="Activity">Create an activity</a>
+    </h2>
+
     @foreach (var a in Model)
     {
         <p><strong>@a.Name</strong>: @a.Category.Name</p>

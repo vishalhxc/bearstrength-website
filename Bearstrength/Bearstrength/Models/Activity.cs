@@ -11,6 +11,8 @@ namespace Bearstrength.Models
         [Key]
         public int Id { get; set; }
 
+        public BearstrengthUser User { get; set; }
+
         [Required]
         [StringLength(50)]
         public string Name { get; set; }

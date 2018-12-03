@@ -26,17 +26,18 @@
                         <li class="nav-item">
                             <a asp-action="Contact" asp-controller="Home" class="nav-link">Contact</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="activityDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Activities
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="activityDropdown">
-                                <a asp-action="Index" asp-controller="Activity" class="dropdown-item">My activities</a>
-                                <a asp-action="Create" asp-controller="Activity" class="dropdown-item">Create an activity</a>
-                            </div>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Activity" class="nav-link">My activities</a>
                         </li>
                         <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Home" class="nav-link">Username</a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a asp-controller="Account" asp-action="Logout" class="nav-link">Logout @User.Identity.Name</a>
+                            }
+                            else
+                            {
+                                <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+                            }
                         </li>
                     </ul>
                 </div>
@@ -52,6 +53,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Site.js"></script>
+    @RenderSection("Scripts", false)
 </body>
 
 </html>

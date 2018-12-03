@@ -26,8 +26,24 @@ gulp.task("add-bootstrap", function () {
 
 
 gulp.task("add-jquery", function () {
-    return gulp.src("node_modules/jquery/dist/jquery.min.js")
-        .pipe(gulp.dest("wwwroot/js"));
+    var streams = [];
+
+    streams.push(
+        gulp.src('node_modules/jquery/dist/jquery.min.js')
+            .pipe(gulp.dest('wwwroot/js'))
+    );
+
+    streams.push(
+        gulp.src('node_modules/jquery-validation/dist/jquery.validate.min.js')
+            .pipe(gulp.dest('wwwroot/js'))
+    );
+
+    streams.push(
+        gulp.src('node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js')
+            .pipe(gulp.dest('wwwroot/js'))
+    );
+
+    return merge(streams);
 });
 
 gulp.task("compile-minify-sass", function () {

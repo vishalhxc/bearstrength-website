@@ -1,9 +1,10 @@
 ﻿using Bearstrength.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bearstrength.Data
 {
-    public class BearstrengthDbContext : DbContext
+    public class BearstrengthDbContext : IdentityDbContext<BearstrengthUser>
     {
         /// <summary>
         /// Database context used for CRUD functions.
