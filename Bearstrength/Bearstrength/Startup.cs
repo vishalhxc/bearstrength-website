@@ -1,4 +1,4 @@
-﻿using Bearstrength.Models;
+﻿using Bearstrength.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +24,7 @@ namespace Bearstrength
             {
                 cfg.UseSqlServer(_config.GetConnectionString("BearstrengthConnectionString"));
             });
+            services.AddScoped<IBearstrengthRepository, BearstrengthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,8 +38,6 @@ namespace Bearstrength
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            //app.UseHsts();
-            //app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

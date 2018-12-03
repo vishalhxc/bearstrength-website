@@ -1,26 +1,23 @@
-﻿using Bearstrength.Models;
+﻿using Bearstrength.Data;
+using Bearstrength.Models;
 using Bearstrength.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace Bearstrength.Controllers
 {
     public class ActivityController : Controller
     {
-        private readonly BearstrengthDbContext _context;
+        private readonly IBearstrengthRepository _repository;
 
-        public ActivityController(BearstrengthDbContext context)
+        public ActivityController(IBearstrengthRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public ActionResult Index()
         {
-            var activities = _context.Activities
-                .OrderBy(a => a.Name)
-                .Include(a => a.Category);
+            var activities = _repository.GetAllActivities();
             return View(activities);
         }
 
@@ -28,7 +25,7 @@ namespace Bearstrength.Controllers
         {
             var viewModel = new ActivityFormViewModel
             {
-                Categories = _context.Categories.ToList()
+                Categories = _repository.GetAllCategories()
             };
 
             return View(viewModel);
@@ -41,7 +38,7 @@ namespace Bearstrength.Controllers
         {
             if (!ModelState.IsValid)
             {
-                viewModel.Categories = _context.Categories.ToList();
+                viewModel.Categories = _repository.GetAllCategories();
                 return View("Create", viewModel);
             }
 
@@ -51,8 +48,8 @@ namespace Bearstrength.Controllers
                 Name = viewModel.Name
             };
 
-            _context.Activities.Add(activity);
-            _context.SaveChanges();
+            _repository.AddActivity(activity);
+            _repository.SaveAll();
             return RedirectToAction("Index", "Activity");
         }
 

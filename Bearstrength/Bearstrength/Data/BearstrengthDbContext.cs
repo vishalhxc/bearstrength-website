@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Bearstrength.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Bearstrength.Models
+namespace Bearstrength.Data
 {
     public class BearstrengthDbContext : DbContext
     {
