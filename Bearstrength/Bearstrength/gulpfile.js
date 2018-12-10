@@ -46,6 +46,11 @@ gulp.task("add-jquery", function () {
     return merge(streams);
 });
 
+gulp.task("add-popperjs", function () {
+    return gulp.src('node_modules/popper.js/dist/popper.min.js')
+            .pipe(gulp.dest('wwwroot/js'));
+});
+
 gulp.task("compile-minify-sass", function () {
     return gulp.src('Styles/Site.scss')
         .pipe(sass())
@@ -59,4 +64,4 @@ gulp.task("minify-js", function () {
         .pipe(gulp.dest('wwwroot/js'));
 });
 
-gulp.task("default", gulp.series('add-bootstrap', 'add-jquery', 'compile-minify-sass', 'minify-js'))
+gulp.task("default", gulp.series('add-bootstrap', 'add-jquery', 'add-popperjs', 'compile-minify-sass', 'minify-js'))
