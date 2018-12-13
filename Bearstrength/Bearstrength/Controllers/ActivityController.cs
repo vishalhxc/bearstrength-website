@@ -1,7 +1,9 @@
-﻿using Bearstrength.Data;
+﻿using System.Threading.Tasks;
+using Bearstrength.Data;
 using Bearstrength.Models;
 using Bearstrength.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bearstrength.Controllers
@@ -9,10 +11,12 @@ namespace Bearstrength.Controllers
     public class ActivityController : Controller
     {
         private readonly IBearstrengthRepository _repository;
+        private readonly UserManager<BearstrengthUser> _userManager;
 
-        public ActivityController(IBearstrengthRepository repository)
+        public ActivityController(IBearstrengthRepository repository, UserManager<BearstrengthUser> userManager)
         {
             _repository = repository;
+            _userManager = userManager;
         }
 
         [Authorize]
@@ -37,7 +41,7 @@ namespace Bearstrength.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult CreateActivity(ActivityFormViewModel viewModel)
+        public async Task<IActionResult> CreateActivity(ActivityFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +52,8 @@ namespace Bearstrength.Controllers
             var activity = new Activity
             {
                 CategoryId = viewModel.CategoryId,
-                Name = viewModel.Name
+                Name = viewModel.Name,
+                User = await _userManager.FindByNameAsync(User.Identity.Name)
             };
 
             _repository.AddActivity(activity);

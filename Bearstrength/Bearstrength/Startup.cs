@@ -26,7 +26,7 @@ namespace Bearstrength
             // Add context to query SQL database using connection string in config file.
             services.AddDbContext<BearstrengthDbContext>(cfg =>
             {
-                cfg.UseSqlServer(_config.GetConnectionString("BearstrengthConnectionString"));
+                cfg.UseSqlServer(_config.GetConnectionString("BearstrengthDockerConnectionString"));
             });
 
             // Add repository pattern service to make database calls.
