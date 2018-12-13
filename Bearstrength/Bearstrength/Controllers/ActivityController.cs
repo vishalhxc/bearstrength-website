@@ -53,7 +53,7 @@ namespace Bearstrength.Controllers
             {
                 CategoryId = viewModel.CategoryId,
                 Name = viewModel.Name,
-                User = await _userManager.FindByNameAsync(User.Identity.Name)
+                User = await _userManager.GetUserAsync(User)
             };
 
             _repository.AddActivity(activity);
