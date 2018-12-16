@@ -4,14 +4,16 @@ using Bearstrength.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bearstrength.Migrations
 {
     [DbContext(typeof(BearstrengthDbContext))]
-    partial class BearstrengthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181213050454_AddRoutinesTable")]
+    partial class AddRoutinesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

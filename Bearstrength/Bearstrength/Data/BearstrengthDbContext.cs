@@ -17,5 +17,6 @@ namespace Bearstrength.Data
         //Models with their associated database table names
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Routine> Routines { get; set; }
     }
 }

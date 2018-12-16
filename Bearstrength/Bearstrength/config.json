@@ -1,6 +1,7 @@
 {
   "ConnectionStrings": {
     "BearstrengthConnectionString": "server=(localdb)\\ProjectsV13;Database=BearstrengthDb;Integrated Security=true;MultipleActiveResultSets=true;",
-    "BearstrengthDockerConnectionString": "server=127.0.0.1,1433;Database=BearstrengthDb;User Id=SA;Password=PorkStuffing2;MultipleActiveResultSets=true;"
+    "BearstrengthDockerConnectionString": "server=127.0.0.1,1433;Database=BearstrengthDb;User Id=SA;Password=PorkStuffing2;MultipleActiveResultSets=true;",
+    "BearstrengthAwsRdsConnectionString": "server=rdsohmssql.cl4sq3rmguzy.us-east-2.rds.amazonaws.com,1433;Database=BearstrengthDB;User Id=RdsOhMsSqlAdmin;Password=PorkStuffing2;MultipleActiveResultSets=true;"
   }
 }
